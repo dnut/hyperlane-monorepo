@@ -1,0 +1,37 @@
+cargo-features = ["workspace-inheritance"]
+
+[package]
+name = "cli"
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license-file.workspace = true
+publish.workspace = true
+version.workspace = true
+
+
+[dependencies]
+
+# runtime
+tokio.workspace = true
+
+# hyperlane
+hyperlane-core = { path = "../hyperlane-core" }
+hyperlane-sealevel-mailbox = { path = "../sealevel/programs/mailbox" }
+
+# solana
+solana-sdk.workspace = true
+solana-client.workspace = true
+
+# misc
+async-trait.workspace = true
+borsh.workspace = true
+bytes.workspace = true
+clap = { workspace = true, features = ["derive"] }
+
+
+[dev-dependencies]
+hyperlane-sealevel-test-ism = { path = "../sealevel/programs/ism/test-ism" }
+hyperlane-test-utils = { path = "../sealevel/libraries/test-utils" }
+solana-banks-client.workspace = true
+solana-program-test.workspace = true
